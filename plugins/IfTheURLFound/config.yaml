@@ -1,0 +1,13 @@
+name: IfTheURLFound
+id:   IfTheURLFound
+key:  iftheurlfound
+version: 0.1
+author_link: http://alfasado.net/
+author_name: Alfasado Inc.
+l10n_class: IfTheURLFound::L10N
+description: <__trans phrase="Conditional Tag IfTheURLFound.">
+tags:
+    block:
+        IfTheURLFound?: $iftheurlfound::IfTheURLFound::Tags::_hdlr_if_the_url_found
+        IfURLFound?: $iftheurlfound::IfTheURLFound::Tags::_hdlr_if_the_url_found
+
