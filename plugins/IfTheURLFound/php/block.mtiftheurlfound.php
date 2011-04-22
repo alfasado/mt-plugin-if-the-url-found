@@ -37,7 +37,7 @@ function smarty_block_mtiftheurlfound ( $args, $content, &$ctx, &$repeat ) {
         if (! $args[ 'target_outlink' ] ) {
             return $ctx->_hdlr_if( $args, $content, $ctx, $repeat, TRUE );
         }
-        set_error_handler( 'error_handler' );
+        set_error_handler( '_mtiftheurlfound_error_handler' );
         $header = @get_headers( $url );
         if ( preg_match( '#^HTTP/.*\s+[200|302|304]+\s#i', $header[0] ) ) {
             return $ctx->_hdlr_if( $args, $content, $ctx, $repeat, TRUE );
@@ -45,5 +45,5 @@ function smarty_block_mtiftheurlfound ( $args, $content, &$ctx, &$repeat ) {
         return $ctx->_hdlr_if( $args, $content, $ctx, $repeat, FALSE );
     }
 }
-function error_handler() {}
+function _mtiftheurlfound_error_handler() {}
 ?>
